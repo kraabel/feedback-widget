@@ -1,0 +1,299 @@
+/* @florence/feedback-widget - Base Styles */
+
+/* These styles provide minimal styling for the widget when Tailwind is not available */
+/* If you're using Tailwind, you don't need to import this file */
+
+.florence-feedback-widget {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.florence-feedback-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.florence-feedback-button:hover {
+  background-color: #2563eb;
+}
+
+.florence-feedback-dialog {
+  position: fixed;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  width: 24rem;
+  max-height: 80vh;
+}
+
+.florence-feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.florence-feedback-content {
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.florence-form-group {
+  margin-bottom: 1rem;
+}
+
+.florence-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.florence-form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.florence-form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.florence-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.florence-btn-primary {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.florence-btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.florence-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Screenshot capture overlay */
+.florence-capture-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  cursor: crosshair;
+  background-color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.florence-capture-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.florence-capture-panel {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+  margin: 1rem;
+}
+
+.florence-capture-option {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.florence-capture-option:hover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+/* Screenshot gallery */
+.florence-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.florence-gallery-item {
+  position: relative;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.florence-gallery-item img {
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.florence-gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.florence-gallery-item:hover .florence-gallery-item-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+/* Annotation editor */
+.florence-annotate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.florence-annotate-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.florence-annotate-canvas {
+  cursor: crosshair;
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+}
+
+/* Priority badges */
+.florence-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.florence-badge-low {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.florence-badge-medium {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.florence-badge-high {
+  background-color: #ffedd5;
+  color: #c2410c;
+}
+
+.florence-badge-critical {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .florence-feedback-dialog {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .florence-feedback-content {
+    color: #f9fafb;
+  }
+  
+  .florence-form-label {
+    color: #e5e7eb;
+  }
+  
+  .florence-form-input {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .florence-capture-panel {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .florence-capture-option {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .florence-capture-option:hover {
+    border-color: #3b82f6;
+    background-color: #1e3a5f;
+  }
+}
